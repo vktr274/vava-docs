@@ -13,6 +13,15 @@
 
 </details>
 
+### Navigácia - Sitemap
+
+<details>
+<summary><b>Rozbaliť schému navigácie</b></summary>
+
+![sitemap](sitemap.svg)
+
+</details>
+
 ### Use Case - Zákazník
 
 <details>
