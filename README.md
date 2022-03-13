@@ -35,20 +35,27 @@ Filip je administrátor aplikácie. Jeho úlohou je pozorovať aktivitu použív
 #### Reštaurácia/prevádzka - externá spoločnosť s ponukou jedál na objednávku
 
 a) Čím viac reštaurácií sa nachádza v aplikácii, tým väčší výber pre používateľa a väčšia pravdepodobnosť, že si vyberie.
+
 b) Prítomnosť reštaurácií v aplikácii je nevyhnutná, ba až kľúčová.
+
 c) Pre každú reštauráciu je uvedená cena donášky z konkrétnej reštaurácie.
+
 d) Každá reštaurácia má zobrazené užívateľské hodnotenia.
 
 #### Menu - ponuka jedál v rámci reštaurácie
 
 a) každá reštaurácia má svoju vlastnú ponuku jedál, ktorá je pre každú reštauráciu nevyhnutná.
+
 b) Každé jedlo obsahuje aj krátky popis s použitými ingredienciami.
+
 c) Pre každú položku je uvedená cena.
 
 #### Objednávka - vybrané položky, ktoré chce používateľ kúpiť
 
 a) Jednoznačne definovaný zoznam jedál, ktoré si používateľ objednáva.
+
 b) Musí byť z reštaurácií, ktoré sú istú maximálnu vzdialenosť od seba z logistických dôvodov.
+
 c) Obsahuje aj poznámky ku objednávke - nie sú vyžadované, ani potrebné, ale v niektorých situáciách môžu uľahčiť používanie.
 
 #### Platba objednávky - platba za jedlo, ktoré používateľ objednáva
@@ -62,7 +69,9 @@ Používateľovi je zobrazený predpokladaný čas trvania donášky.
 #### Adresa doručenia - adresa, kam kuriér doručí zákazníkovi objednávku
 
 a) Zadáva ju zákazník v rámci objednávky.
+
 b) Je nevyhnutná pre doručenie objednávky.
+
 c) Vplýva na cenu doručenia.
 
 ### Najbežnejšie úlohy
