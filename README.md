@@ -53,11 +53,11 @@ c) Obsahuje aj poznámky ku objednávke - nie sú vyžadované, ani potrebné, a
 
 #### Platba objednávky - platba za jedlo, ktoré používateľ objednáva
 
-a) Nutný výber spôsobu platby za objednávku kartou alebo v hotovosti.
+Nutný výber spôsobu platby za objednávku kartou alebo v hotovosti.
 
 #### Donáška - doručenie objednávky zákazníkovi
 
-a) Používateľovi je zobrazený predpokladaný čas trvania donášky.
+Používateľovi je zobrazený predpokladaný čas trvania donášky.
 
 #### Adresa doručenia - adresa, kam kuriér doručí zákazníkovi objednávku
 
