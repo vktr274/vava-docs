@@ -20,14 +20,33 @@ V súčasnej dobe rastú požiadavky na donášku jedla od používateľov. Veľ
 
 #### Zákazník
 
+a) Vie si vytvoriť konto a prihlasovať sa.
+
+b) Objednáva jedlo z akejkoľvek reštaurácie alebo kaviarne dostupnej v jeho okolí.
+
+c) Vie pridávať hodnotenia na reštaurácie.
+
+**Príklad**:
 Ondrej veľa pracuje v office a nemá veľa času aby išiel niekam von na obed. Preto, pre neho, aby ušetril svoj vzácny voľný čas, je výhodné použitie aplikácie, ktorá umožňuje objednávku jedla z akejkoľvek reštaurácie, alebo kaviarne v jeho okolí. Takto nemusí tráviť čas cestou na obed a späť, ale iba si vytvorí objednávku a k prestávke dostane svoje jedlo.
 
 #### Správca reštaurácie
 
+a) Registruje reštauráciu.
+
+b) Pre zaregistrovanú reštauráciu pridáva jedlo, fotografie k jedlu, popis a cenu.
+
+c) Udržuje aktuálny a relevantný zoznam ponúkaných položiek.
+
+**Príklad**:
 Lucia, ako manažérka reštaurácie, sa rozhodla zaregistrovať reštauráciu v aplikácií. Pridá sem jedlo, ktoré pripravujú, nejaké fotografie, popis a cenu k nemu. Ak sa v budúcnosti rozhodnú pridať nové jedlo do menu, alebo vymazať staré, keďže ho už nevaria, vie to zmeniť aj v aplikácií. Takto obsah zostane relevantný a reštaurácia bude mať dostatok objednávok.
 
 #### Administrátor
 
+a) Kontroluje aktivitu reštaurácií a používateľov.
+
+b) Pri nevhodnom používaní aplikácie má právomoc zablokovať alebo vymazať daný účet.
+
+**Príklad**:
 Filip je administrátor aplikácie. Jeho úlohou je pozorovať aktivitu používateľov a reštaurácií, ktoré sú v aplikácií. Ak nejaký používateľ píše nevhodné komentáre, alebo ak nejaká reštaurácia dostáva príliš zlé hodnotenie, tak vie ich účet zablokovať, a už nebudú mať prístup k programu.
 
 ### Používateľský jazyk
