@@ -5,8 +5,30 @@
 [Backend](https://github.com/vktr274/vava-backend) a [frontend](https://github.com/vktr274/vava-frontend) sú v oddelených repozitároch [vktr274/vava-frontend](https://github.com/vktr274/vava-frontend) a [vktr274/vava-backend](https://github.com/vktr274/vava-backend).
 
 ### RACI matica
+| | András Nagy | Ján Herceg | Mykyta Kretinin | Viktor Modroczký | Peter Janoš |
+| | | | | | |
+| GUI | I | RA | I | C | R |
+| Wireframes | I | RA | R | R | I |
+| REST API | I | IA | R | R | I |
+| Schéma DB | R | IA | C | R | I |
+| Implementácia ORM | I | IA | R | R | I |
+| Diagramy<sup id="diagrams">[1](#footnote)</sup> | R | IA | I | I | I |
+| Logovanie | R | IA | I | I | C |
+| Validácia vstupov a RegEx | R | CA | R | C | R |
+| Lokalizácia | I | RA | I | I | R |
+| XML | C | RA | C | C | I |
 
-*placeholder*
+**Vysvetlivky**
+
+`A` - Approval
+
+`R` - Realization
+
+`C` - Consultation
+
+`I` - Information
+
+<sup id="footnote">[1](#diagrams)</sup> Sequence, Class, Package, Activity, Use Case diagramy
 
 ### Vízia
 
