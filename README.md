@@ -2,7 +2,7 @@
 
 ## Semestrálny projekt - projektová dokumentácia
 
-[Backend](https://github.com/vktr274/vava-backend) a [frontend](https://github.com/vktr274/vava-frontend) sú v oddelených repozitároch [vktr274/vava-frontend](https://github.com/vktr274/vava-frontend) a [vktr274/vava-backend](https://github.com/vktr274/vava-backend).
+[Backend](https://github.com/vktr274/vava-backend) a [frontend](https://github.com/vktr274/vava-frontend) s popisom sú v oddelených repozitároch [vktr274/vava-frontend](https://github.com/vktr274/vava-frontend) a [vktr274/vava-backend](https://github.com/vktr274/vava-backend).
 
 ### RACI matica
 | | András Nagy | Ján Herceg | Mykyta Kretinin | Viktor Modroczký | Peter Janoš |
