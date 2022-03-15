@@ -6,7 +6,7 @@
 
 ### RACI matica
 | | András Nagy | Ján Herceg | Mykyta Kretinin | Viktor Modroczký | Peter Janoš |
-| | | | | | |
+| --- | --- | --- | --- | --- | --- |
 | GUI | I | RA | I | C | R |
 | Wireframes | I | RA | R | R | I |
 | REST API | I | IA | R | R | I |
