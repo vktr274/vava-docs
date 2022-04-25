@@ -1,8 +1,10 @@
-# Vývoj aplikácii s viacvrstvovou architektúrou
+# Semestrálny projekt - projektová dokumentácia
 
-## Semestrálny projekt - projektová dokumentácia
+Dokumentácia obsahuje [projektový zámer](#projektový-zámer) aj [finálny popis aplikácie](#finálna-dokumentácia).
 
 [Backend](https://github.com/vktr274/vava-backend) a [frontend](https://github.com/vktr274/vava-frontend) s popisom sú v oddelených repozitároch [vktr274/vava-frontend](https://github.com/vktr274/vava-frontend) a [vktr274/vava-backend](https://github.com/vktr274/vava-backend).
+
+## Projektový zámer
 
 ### RACI matica
 | | András Nagy | Ján Herceg | Mykyta Kretinin | Viktor Modroczký | Peter Janoš |
@@ -152,10 +154,21 @@ Keďže trh s donáškovými aplikáciami je na mobilných zariadeniach dostato�
 
 ### Schéma databázy
 
+#### Pôvodná schéma databázy
+
 <details>
 <summary><b>Rozbaliť schému databázy</b></summary>
 
 ![db_scheme](db.svg)
+
+</details>
+
+#### Finálna schéma databázy
+
+<details>
+<summary><b>Rozbaliť finálnu schému databázy</b></summary>
+
+![db_scheme](db_final.svg)
 
 </details>
 
@@ -285,5 +298,157 @@ Keďže trh s donáškovými aplikáciami je na mobilných zariadeniach dostato�
 <summary><b>13. Obrazovka nastavení</b></summary>
 
 ![settings](wireframes/settings.svg)
+
+</details>
+
+## Finálna dokumentácia
+
+### Realizácia požiadaviek
+
+#### Kolekcie
+
+Pri vytvorení projektu boli použité rôzne dátové štruktúry pre uchovávanie dát. Najčastejšou používanou dátovou štruktúrou je ArrayList, keďže je dynamický a nemusíme ho realokovať pri pridavaní/vymazávaní dát. Používame ho namiesto LinkedList, pretože dáta v ArrayList na backende nemeníme často a potrebujeme k rýchlejší prístup na čítanie, čo je výhodou tejto dátovej štruktúry. Okrem toho sa pre výmenu dát medzi frontendom a backendom používa dátový formát JSON pre serializovanie dátových štruktúr - objekty a polia.
+
+#### Logovanie
+
+Logovanie sa uskutočňuje na backendovej časti projektu, kde beží server s endpointami. Do logov sa zapisujú všetky zachytené výnimky (exceptions), vytváranie, zmena a vymazanie údajov v databáze, úspešné či neúspešné prihlásenie sa používateľa do aplikácie, pokus o neoprávnený prístup k dátam (nesprávna rola).
+
+#### Lokalizácia
+
+Aplikácia beží v dvoch jazykoch: angličtina a slovenčina. Používateľ vie zmeniť jazyk cez tlačidlo *Jazyk - EN*, resp. *Language - EN* v bočnom menu.
+
+<img src="./screenshots/left_panel_sk.png" height="512">
+
+<img src="./screenshots/left_panel_eng.png" height="512">
+
+#### XML
+
+Frontend je napísaný s použitím JavaFX a základné rozhranie okien aplikácie bolo vytvorené v FXML súboroch. FXML súbory sa načítavajú cez FXMLLoader. FXML jazyk, ktorý je založený na XML, sa používal pre vytvorenie dizajnu aplikácie a polohovanie komponentov GUI. Neskôr tieto komponenty sa dopĺňali a menili v kóde.
+
+#### Regulárne výrazy - RegEx
+
+Regulárne výrazy boli použité na backendovej a frontendovej časti pre validáciu dát. Na frontende sa používajú napríklad pre overenie či používateľ zadal správny formát emailu pri registrácii a či je zadané heslo dostatočne zložité (8+ znakov, 1 veľké a 1 malé písmeno, 1 špeciálny znak). Na backende sa RegEx používa pre validáciu dát modelu Phone - country code (“+ a 3 číslice”) a telefónneho čísla (zvyšných 9 číslic).
+
+#### JDBC
+
+V projekte sa na uchovavánie dát používa PostgreSQL databáza. Pripojenie k databáze bolo realizované pomocou Spring v súbore application.properties, v ktorom sa odkazuje na premenné prostredia obsahujúce datasurce url, heslo a používateľské meno pre pripojenie k DB. Komunikácia s databázou sa uskutočňovala s využitím Spring Data JPA nad JDBC a Hibernate. Pre jednoduchosť práce s dátami boli vytvorené modely reprezentujuce dáta tabuliek DB. Štruktúra databázy sa aktualizuje cez migrácie, ktoré sú súčasťou backendu a overujú, resp. aplikujú sa pri spustení servera.
+
+Premenné prostredia je nutné nastaviť v nasledovnom tvare:
+
+`SPRING_DATASOURCE_URL=jdbc:postgresql://{your_host}:{your_port}/{your_db_name}?currentSchema={your_schema_name}`\
+`SPRING_DATASOURCE_USERNAME={your_username}`\
+`SPRING_DATASOURCE_PASSWORD={your_password}`,
+
+kde `{your_host}`, `{your_port}`, `{your_db_name}` a `your_schema_name` treba nahradiť údajmi PostgreSQL databázy.
+
+#### Ošetrenie/validácia vstupov + bezpečnosť
+
+Ako už bolo spomenuté, na frontende a backende sa ošetruje formát dát pre isté vstupy. Zároveň sa v aplikácií používajú tokeny pri komunikácii klienta so serverom. Token sa generuje pre usera pri prihlásení do aplikácie (1 token per session) a odosiela sa v headeri HTTP requestov. Backend potom overuje či majiteľ tohto tokenu ma oprávnenie (rolu) vykonať istú operáciu, a ak áno, môže pokračovať. Neoprávnený prístup, zlý formát dát, zlé requesty a iné chyby sa zachytávajú na backende a zapisujú do logov. Všetky operácie s databázou sú vykonávané cez metódy rozhraní (interface) repozitárov (repositories) poskytované Spring Data JPA, ktoré súvisia s modelmi ORM Hibernate a sú SQL Injection Safe. Zároveň sa v kóde používa anotácia @Query pre vytvorenie native query, ktoré sú tiež SQL Injection Safe, keďže sa nepoužíva obyčajné spájanie reťazcov - concatenation.
+
+#### GUI
+
+Frontend aplikácia je napísaný s použitím JavaFX.
+
+#### Traja rôzni používatelia
+
+Aplikácia je navrhnutá pre 3 typy (roly) používateľov: guest (prihlásený zákazník), manager (manažér reštaurácie) a admin. Každá rola má svoje oprávnenia a pri použití aplikácie sa jej zobrazujú len jej prístupné prvky stránky. Na backende sa rola používa pre overovanie prístupu používateľov k dátam cez API volania.
+
+#### Zapuzdrenie dátových zložiek
+
+Všetky dátové zložky sú privátne a prístup k nim funguje prostredníctvom zodpovedajúcich getterov a setterov.
+
+### Diagramy
+
+#### Diagramy aktivít
+
+<details>
+<summary><b>Rozbaliť diagram aktivít administrátora</b></summary>
+
+![settings](diagrams/ADAdministrator.jpg)
+
+</details>
+
+<details>
+<summary><b>Rozbaliť diagram aktivít manažéra reštaurácie</b></summary>
+
+![settings](diagrams/ADManager.jpg)
+
+</details>
+
+<details>
+<summary><b>Rozbaliť diagram aktivít zákazníka</b></summary>
+
+![settings](diagrams/ADCustomer.jpg)
+
+</details>
+
+#### Diagram tried
+
+<details>
+<summary><b>Rozbaliť diagram tried</b></summary>
+
+![settings](diagrams/GYM_classdiagram.jpg)
+
+</details>
+
+#### Diagramy balíkov
+
+<details>
+<summary><b>Rozbaliť diagram balíkov pre frontend</b></summary>
+
+![settings](diagrams/Package_Diagram_Frontend.jpg)
+
+</details>
+
+<details>
+<summary><b>Rozbaliť diagram balíkov pre backend</b></summary>
+
+![settings](diagrams/Package_Diagram_Backend.jpg)
+
+</details>
+
+#### Sekvenčné diagramy
+
+<details>
+<summary><b>Rozbaliť sekvenčný diagram administrátora</b></summary>
+
+![settings](diagrams/SD_Admin.jpg)
+
+</details>
+
+<details>
+<summary><b>Rozbaliť sekvenčný diagram manažéra reštaurácie</b></summary>
+
+![settings](diagrams/SD_Manager.jpg)
+
+</details>
+
+<details>
+<summary><b>Rozbaliť sekvenčný diagram zákazníka</b></summary>
+
+![settings](diagrams/SD_Customer.jpg)
+
+</details>
+
+#### Diagramy prípadov použitia
+
+<details>
+<summary><b>Rozbaliť diagram prípadov použitia pre administrátora</b></summary>
+
+![settings](diagrams/UseCaseAdministrator.jpg)
+
+</details>
+
+<details>
+<summary><b>Rozbaliť diagram prípadov použitia pre manažéra reštaurácie</b></summary>
+
+![settings](diagrams/UseCaseManager.jpg)
+
+</details>
+
+<details>
+<summary><b>Rozbaliť diagram prípadov použitia pre zákazníka</b></summary>
+
+![settings](diagrams/UseCaseCustomer.jpg)
 
 </details>
