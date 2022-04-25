@@ -164,7 +164,7 @@ Keďže trh s donáškovými aplikáciami je na mobilných zariadeniach dostato�
 <details>
 <summary><b>Rozbaliť schému databázy</b></summary>
 
-![db_scheme](db.svg)
+![db_schema](db.svg)
 
 </details>
 
@@ -173,7 +173,7 @@ Keďže trh s donáškovými aplikáciami je na mobilných zariadeniach dostato�
 <details>
 <summary><b>Rozbaliť finálnu schému databázy</b></summary>
 
-![db_scheme](db_final.svg)
+![db_schema_final](db_final.svg)
 
 </details>
 
@@ -370,21 +370,21 @@ Všetky dátové zložky sú privátne a prístup k nim funguje prostredníctvom
 <details>
 <summary><b>Rozbaliť diagram aktivít administrátora</b></summary>
 
-![settings](diagrams/ADAdministrator.jpg)
+![diag1](diagrams/ADAdministrator.jpg)
 
 </details>
 
 <details>
 <summary><b>Rozbaliť diagram aktivít manažéra reštaurácie</b></summary>
 
-![settings](diagrams/ADManager.jpg)
+![diag2](diagrams/ADManager.jpg)
 
 </details>
 
 <details>
 <summary><b>Rozbaliť diagram aktivít zákazníka</b></summary>
 
-![settings](diagrams/ADCustomer.jpg)
+![diag3](diagrams/ADCustomer.jpg)
 
 </details>
 
@@ -393,7 +393,7 @@ Všetky dátové zložky sú privátne a prístup k nim funguje prostredníctvom
 <details>
 <summary><b>Rozbaliť diagram tried</b></summary>
 
-![settings](diagrams/GYM_classdiagram.jpg)
+![diag4](diagrams/GYM_classdiagram.jpg)
 
 </details>
 
@@ -402,14 +402,14 @@ Všetky dátové zložky sú privátne a prístup k nim funguje prostredníctvom
 <details>
 <summary><b>Rozbaliť diagram balíkov pre frontend</b></summary>
 
-![settings](diagrams/Package_Diagram_Frontend.jpg)
+![diag5](diagrams/Package_Diagram_Frontend.jpg)
 
 </details>
 
 <details>
 <summary><b>Rozbaliť diagram balíkov pre backend</b></summary>
 
-![settings](diagrams/Package_Diagram_Backend.jpg)
+![diag6](diagrams/Package_Diagram_Backend.jpg)
 
 </details>
 
@@ -418,21 +418,21 @@ Všetky dátové zložky sú privátne a prístup k nim funguje prostredníctvom
 <details>
 <summary><b>Rozbaliť sekvenčný diagram administrátora</b></summary>
 
-![settings](diagrams/SD_Admin.jpg)
+![diag7](diagrams/SD_Admin.jpg)
 
 </details>
 
 <details>
 <summary><b>Rozbaliť sekvenčný diagram manažéra reštaurácie</b></summary>
 
-![settings](diagrams/SD_Manager.jpg)
+![diag8](diagrams/SD_Manager.jpg)
 
 </details>
 
 <details>
 <summary><b>Rozbaliť sekvenčný diagram zákazníka</b></summary>
 
-![settings](diagrams/SD_Customer.jpg)
+![diag9](diagrams/SD_Customer.jpg)
 
 </details>
 
@@ -441,20 +441,20 @@ Všetky dátové zložky sú privátne a prístup k nim funguje prostredníctvom
 <details>
 <summary><b>Rozbaliť diagram prípadov použitia pre administrátora</b></summary>
 
-![settings](diagrams/UseCaseAdministrator.jpg)
+![diag10](diagrams/UseCaseAdministrator.jpg)
 
 </details>
 
 <details>
 <summary><b>Rozbaliť diagram prípadov použitia pre manažéra reštaurácie</b></summary>
 
-![settings](diagrams/UseCaseManager.jpg)
+![diag11](diagrams/UseCaseManager.jpg)
 
 </details>
 
 <details>
 <summary><b>Rozbaliť diagram prípadov použitia pre zákazníka</b></summary>
 
-![settings](diagrams/UseCaseCustomer.jpg)
+![diag12](diagrams/UseCaseCustomer.jpg)
 
 </details>
