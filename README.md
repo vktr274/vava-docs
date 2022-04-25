@@ -365,6 +365,8 @@ Všetky dátové zložky sú privátne a prístup k nim funguje prostredníctvom
 
 ### Diagramy
 
+Diagramy boli vytvorené pomocou modelovacieho nástroja Enterprise Architect. Projektový súbor je [GYM.eap](GYM.eap).
+
 #### Diagramy aktivít
 
 <details>
