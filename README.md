@@ -2,6 +2,8 @@
 
 Dokumentácia obsahuje [projektový zámer](#projektový-zámer) aj [finálny popis aplikácie](#finálna-dokumentácia).
 
+Videoprezentácia je nahraná na YouTube na tomto [linku](https://youtu.be/af5oA9q60Uk).
+
 [Backend](https://github.com/vktr274/vava-backend) a [frontend](https://github.com/vktr274/vava-frontend) s popisom sú v oddelených repozitároch [vktr274/vava-frontend](https://github.com/vktr274/vava-frontend) a [vktr274/vava-backend](https://github.com/vktr274/vava-backend).
 
 ## Projektový zámer
@@ -327,7 +329,7 @@ Frontend je napísaný s použitím JavaFX a základné rozhranie okien aplikác
 
 #### Regulárne výrazy - RegEx
 
-Regulárne výrazy boli použité na backendovej a frontendovej časti pre validáciu dát. Na frontende sa používajú napríklad pre overenie či používateľ zadal správny formát emailu pri registrácii a či je zadané heslo dostatočne zložité (8+ znakov, 1 veľké a 1 malé písmeno, 1 špeciálny znak). Na backende sa RegEx používa pre validáciu dát modelu Phone - country code (“+ a 3 číslice”) a telefónneho čísla (zvyšných 9 číslic).
+Regulárne výrazy boli použité na backendovej a frontendovej časti pre validáciu dát. Na frontende sa používajú napríklad pre overenie či používateľ zadal správny formát emailu pri registrácii a či je zadané heslo dostatočne zložité (8+ znakov, 1 veľké a 1 malé písmeno, 1 špeciálny znak). Na backende sa RegEx používa pre validáciu dát modelu Phone - country code ("+ a 3 číslice") a telefónneho čísla (zvyšných 9 číslic).
 
 #### JDBC
 
@@ -343,7 +345,8 @@ kde `{your_host}`, `{your_port}`, `{your_db_name}` a `your_schema_name` treba na
 
 #### Ošetrenie/validácia vstupov + bezpečnosť
 
-Ako už bolo spomenuté, na frontende a backende sa ošetruje formát dát pre isté vstupy. Zároveň sa v aplikácií používajú tokeny pri komunikácii klienta so serverom. Token sa generuje pre usera pri prihlásení do aplikácie (1 token per session) a odosiela sa v headeri HTTP requestov. Backend potom overuje či majiteľ tohto tokenu ma oprávnenie (rolu) vykonať istú operáciu, a ak áno, môže pokračovať. Neoprávnený prístup, zlý formát dát, zlé requesty a iné chyby sa zachytávajú na backende a zapisujú do logov. Všetky operácie s databázou sú vykonávané cez metódy rozhraní (interface) repozitárov (repositories) poskytované Spring Data JPA, ktoré súvisia s modelmi ORM Hibernate a sú SQL Injection Safe. Zároveň sa v kóde používa anotácia @Query pre vytvorenie native query, ktoré sú tiež SQL Injection Safe, keďže sa nepoužíva obyčajné spájanie reťazcov - concatenation.
+Ako už bolo spomenuté, na frontende a backende sa ošetruje formát dát pre isté vstupy. Zároveň sa v aplikácií používajú tokeny pri komunikácii klienta so serverom. Token sa generuje pre usera pri prihlásení do aplikácie (1 token per session) a odosiela sa v headeri HTTP requestov. Backend potom overuje či majiteľ tohto tokenu ma oprávnenie (rolu) vykonať istú operáciu, a ak áno, môže pokračovať. Neoprávnený prístup, zlý formát dát, zlé requesty a iné chyby sa zachytávajú na backende a zapisujú do logov. Všetky operácie s databázou sú vykonávané cez metódy rozhraní (interface) repozitárov (repositories) poskytované Spring Data JPA, ktoré súvisia s modelmi ORM Hibernate a sú SQL Injection Safe. Zároveň sa v kóde používa anotácia @Query pre vytvorenie native query, ktoré sú tiež SQL Injection Safe, keďže sa nepoužíva obyčajné spájanie reťazcov - concatenation. Frontend šifruje heslo do MD5 pri registrácii používateľa, aby sa do databázy neukladalo heslo v ako "raw" text.
+
 
 #### GUI
 
