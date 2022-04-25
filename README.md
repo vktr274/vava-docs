@@ -1,4 +1,7 @@
-# Semestrálny projekt - projektová dokumentácia
+# Projektová dokumentácia pre GYM - Get Your Meal
+
+**Tím Žalospeváci**:\
+András Nagy, Ján Herceg, Mykyta Kretinin, Viktor Modroczký, Peter Janoš
 
 Dokumentácia obsahuje [projektový zámer](#projektový-zámer) aj [finálny popis aplikácie](#finálna-dokumentácia).
 
