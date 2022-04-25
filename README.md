@@ -379,7 +379,7 @@ Diagramy boli vytvorené pomocou modelovacieho nástroja Enterprise Architect. P
 <details>
 <summary><b>Rozbaliť diagram aktivít manažéra reštaurácie</b></summary>
 
-![diag2](diagrams/ADManager.png)
+![diag2](diagrams/ActivityDiagramManager.png)
 
 </details>
 
