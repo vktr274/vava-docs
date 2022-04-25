@@ -9,6 +9,16 @@ Videoprezentácia je nahraná na YouTube na tomto [linku](https://youtu.be/af5oA
 
 [Backend](https://github.com/vktr274/vava-backend) a [frontend](https://github.com/vktr274/vava-frontend) s popisom sú v oddelených repozitároch [vktr274/vava-frontend](https://github.com/vktr274/vava-frontend) a [vktr274/vava-backend](https://github.com/vktr274/vava-backend).
 
+Spustiteľné JAR súbory sú [Zalospevaci_BE.jar](jars/Zalospevaci_BE.jar) pre backend a [Zalospevaci_FE.jar](jars/Zalospevaci_FE.jar) pre frontend.
+
+Spustenie JAR súborov prebieha cez príkaz
+
+```shell
+java -jar {filename}.jar
+```
+
+kde `{filename}` je potrebné nahradiť menom daného JAR súboru.
+
 ## Projektový zámer
 
 ### RACI matica
